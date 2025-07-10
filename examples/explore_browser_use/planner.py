@@ -22,7 +22,7 @@ initial_actions = [
 
 browser_session = BrowserSession(
     highlight_elements=True,
-    determenistic_rendering=False,
+    deterministic_rendering=False,
     include_dynamic_attributes=True,
     save_recording_path="logs/recording",
 )
