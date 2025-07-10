@@ -1,8 +1,11 @@
 """Core data models module."""
-from pydantic import BaseModel
+from uuid import UUID
+from pydantic import BaseModel, HttpUrl
 
 class Project(BaseModel):
     """Project model."""
-    id: str
+    id: UUID
     name: str
-    url: str
+    url: HttpUrl
+
+    model_config = {"from_attributes": True}
