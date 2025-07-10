@@ -15,7 +15,7 @@ example element_list for browser:
 
 example element_list for omniParserResult:
     <element>
-<maker_number>marker number in the screenshot given</maker_number>
+<marker_number>marker number in the screenshot given</marker_number>
 <coordinates>center coordinate of the element. Use this value to interact with this element</coordinates>
 <content>text content of the element. such as label, description etc. Do not hallucinate on this. assume word by word meaning only</content>
 <is_intractable>boolean value denoting whether you can interact with this element or not</is_intractable>
