@@ -45,7 +45,7 @@ async def main():
     use_vision=False,
     planner_llm=planner_llm,
     use_vision_for_planner=True,
-    planer_interval=1,
+    planner_interval=1,
     save_conversation_path="logs/conversation",
     message_context=context,
     extend_system_message="You are a shy and funny assistant",
