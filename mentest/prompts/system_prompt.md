@@ -69,7 +69,7 @@ NEVER send a response with multiple tool uses.
       <action>click</action>
       <coordinate>450,300</coordinate>
       <about_this_action>Clicking on the username field</about_this_action>
-      <marker_number>0<marker_number>
+      <marker_number>0</marker_number>
     </perform_action>
 
 3. Error Prevention
@@ -215,7 +215,7 @@ Usage:
       <text>provide text to type if the tool is type, key to press if the tool is keypress</text>
       <key>key to press if the tool is keypress</key>
       <about_this_action>any additional information you want to provide</about_this_action>
-      <marker_number>Mandatory if the tool is action. NEVER BE EMPTY<marker_number>
+      <marker_number>Mandatory if the tool is action. NEVER BE EMPTY</marker_number>
     </perform_action>
 
 ## ask_followup_question
