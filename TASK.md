@@ -1,8 +1,8 @@
 # Task Tracker
 
 ## Backlog
-- [ ] 2025-07-10 | **Project Scaffolding & Setup** – Create directories, __init__.py files, core config/models, requirements, .env.example (status: pending)
-- [ ] 2025-07-10 | **Infrastructure Setup** – Provision Redis Stack via Docker, update env and requirements, optional docker-compose (status: pending)
+- [x] 2025-07-10 | **Project Scaffolding & Setup** – Create directories, __init__.py files, core config/models, requirements, .env.example (status: completed)
+- [x] 2025-07-10 | **Infrastructure Setup** – Provision Redis Stack via Docker, update env and requirements, optional docker-compose (status: completed)
 - [ ] 2025-07-10 | **Backend API Implementation** – FastAPI app + project endpoints (status: pending)
 - [ ] 2025-07-10 | **Basic UI Construction** – Streamlit main app and Project Setup page (status: pending)
 - [ ] 2025-07-10 | **Site Explorer Service** – Stateful crawler with ExploreMode provider, graph persistence (status: pending)
