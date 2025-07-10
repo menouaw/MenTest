@@ -178,8 +178,20 @@ CREATE .env.example with placeholders for LLM API keys.
 CREATE requirements.txt with initial dependencies: streamlit, fastapi, pydantic, pydantic-settings, browser-use, allure-pytest.
 
 Task 1.5: Infrastructure Setup
-- Add Redis to the project setup (e.g., via Docker Compose). This will be used by the Site Explorer for state management.
+- Provision a local Redis Stack instance using Docker to power the Site Explorer’s graph cache and JSON storage.  
+  For local development you can run:
+
+  ```bash
+  docker run -d --name mentest-redis -p 6379:6379 \
+      -e REDIS_ARGS="--appendonly yes --appendfsync everysec" \
+      --restart=always redis/redis-stack:latest
+  ```
+
+  Redis Stack is required because the Explorer uses the RedisGraph and RedisJSON modules.
+
+- Add `REDIS_HOST` and `REDIS_PORT` placeholders (default `localhost` / `6379`) to `.env.example`.
 - Update `requirements.txt` to include `redis` and `networkx`.
+- Optionally supply a `docker-compose.yml` for one-command startup in CI.
 
 Task 2: Implement Backend API (FastAPI)
 CREATE api/main.py to set up the FastAPI application.
