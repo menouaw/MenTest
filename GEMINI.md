@@ -12,11 +12,10 @@
     - `tools.py` - Tool functions used by the agent 
     - `prompts.py` - System prompts
 - **Use clear, consistent imports** (prefer relative imports within packages).
-- **Use clear, consistent imports** (prefer relative imports within packages).
 - **Use python_dotenv and load_env()** for environment variables.
 
 ### 🧪 Testing & Reliability
-- **Always create Pytest unit tests for new features** (functions, classes, routes, etc).
+- **Always create Pytest unit tests for new features** (functions, classes, routes, etc.).
 - **After updating any logic**, check whether existing unit tests need to be updated. If so, do it.
 - **Tests should live in a `/tests` folder** mirroring the main app structure.
   - Include at least:
