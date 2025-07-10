@@ -3,7 +3,7 @@
 This command standardises how the AI assistant reads, updates, and maintains the project task tracker in **TASK.md**.
 
 ## Target File: TASK.md
-
+ 
 ## Usage Scenarios
 - **Before starting any new piece of work**: Verify the task exists in TASK.md; if not, create it.
 - **During development**: Add "Discovered During Work" subtasks for any new findings.
@@ -41,4 +41,4 @@ This command standardises how the AI assistant reads, updates, and maintains the
 
 ---
 
-*If TASK.md grows beyond readability, consider refactoring into dated sections or archived files.* 
+*If TASK.md grows beyond readability, consider refactoring into dated sections or archived files.*
