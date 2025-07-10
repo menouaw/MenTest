@@ -1,0 +1,13 @@
+fastapi
+streamlit
+browser-use
+allure-pytest
+pydantic
+pydantic-settings
+redis
+pytest
+pytest-bdd
+ruff
+black
+mypy
+python-dotenv
