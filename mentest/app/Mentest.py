@@ -3,6 +3,12 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
+import sys
+import os
+import subprocess
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 import streamlit as st
 import asyncio
 from dotenv import load_dotenv
@@ -12,6 +18,20 @@ load_dotenv()
 
 st.set_page_config(layout="wide")
 st.title("MenTest: Browser Use Example Executor")
+
+# Install Playwright browsers if not already installed
+if 'playwright_installed' not in st.session_state:
+    with st.spinner("Installing Playwright browsers... This may take a moment."):
+        try:
+            result = subprocess.run([sys.executable, "-m", "playwright", "install"], capture_output=True, text=True, check=True)
+            st.success("Playwright browsers installed successfully!")
+            st.code(result.stdout)
+            st.session_state.playwright_installed = True
+        except subprocess.CalledProcessError as e:
+            st.error(f"Failed to install Playwright browsers: {e}")
+            st.code(e.stderr)
+        except FileNotFoundError:
+            st.error("Playwright command not found. Make sure it's installed in your environment.")
 
 # Streamlit UI
 
