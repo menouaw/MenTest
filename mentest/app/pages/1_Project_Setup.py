@@ -6,14 +6,17 @@ from mentest.core.models import Project
 
 API_URL = "http://localhost:8000/api"
 
-st.set_page_config(page_title="Project Setup", page_icon="📝")
 st.title("📝 Project Setup")
 
 st.markdown("Define a new project to begin testing.")
 
 with st.form("project_form"):
-    project_name = st.text_input("Project Name", placeholder="e.g., My E-commerce Site")
-    start_url = st.text_input("Start URL", placeholder="https://example.com")
+    project_name = st.text_input("Project Name", 
+                                 value="OrangeHRM",
+                                 placeholder="e.g., My E-commerce Site")
+    start_url = st.text_input("Start URL", 
+                              value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+                              placeholder="https://example.com")
     submitted = st.form_submit_button("Create Project")
 
 if submitted:
