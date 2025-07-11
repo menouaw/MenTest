@@ -14,3 +14,4 @@ black>=24.0,<25.0
 mypy>=1.0,<2.0
 python-dotenv>=1.0,<2.0
 requests~=2.31.0
+types-requests~=2.31.0

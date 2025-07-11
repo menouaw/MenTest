@@ -1,4 +1,5 @@
 from dotenv import load_dotenv
+
 load_dotenv()
 
 from browser_use.llm import ChatOpenAI
@@ -6,14 +7,14 @@ from browser_use import Agent, BrowserSession
 
 import asyncio
 
-llm = ChatOpenAI(model='gpt-4.1')
+llm = ChatOpenAI(model="gpt-4.1")
 
 # Define sensitive data
 # The LLM will only see placeholder names (x_member_number, x_passphrase), never the actual values
 sensitive_data = {
-    'https://*.orangehrmlive.com': {
-        'x_username': 'Admin',
-        'x_password': 'admin123',
+    "https://*.orangehrmlive.com": {
+        "x_username": "Admin",
+        "x_password": "admin123",
     },
 }
 
@@ -25,19 +26,21 @@ task = """
 
 # Recommended: Limit the domains available for the entire browser so the Agent can't be tricked into visiting untrusted URLs
 browser_session = BrowserSession(
-    allowed_domains=['https://*.orangehrmlive.com'],
-    storage_state='./auth.json')
+    allowed_domains=["https://*.orangehrmlive.com"], storage_state="./auth.json"
+)
 
 agent = Agent(
     task=task,
     llm=llm,
-    sensitive_data=sensitive_data,   # Pass the sensitive data to the agent
-    browser_session=browser_session, # Pass the restricted browser_session to limit URLs Agent can visit
-    use_vision=False,                # Disable vision or else the LLM might see entered values in screenshots
+    sensitive_data=sensitive_data,  # Pass the sensitive data to the agent
+    browser_session=browser_session,  # Pass the restricted browser_session to limit URLs Agent can visit
+    use_vision=False,  # Disable vision or else the LLM might see entered values in screenshots
 )
+
 
 async def main():
     await agent.run()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     asyncio.run(main())

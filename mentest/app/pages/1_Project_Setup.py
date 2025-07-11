@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-import json
 import os
 
 from pydantic import ValidationError
@@ -13,12 +12,14 @@ st.title("📝 Project Setup")
 st.markdown("Define a new project to begin testing.")
 
 with st.form("project_form"):
-    project_name = st.text_input("Project Name", 
-                                 value="OrangeHRM",
-                                 placeholder="e.g., My E-commerce Site")
-    start_url = st.text_input("Start URL", 
-                              value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
-                              placeholder="https://example.com")
+    project_name = st.text_input(
+        "Project Name", value="OrangeHRM", placeholder="e.g., My E-commerce Site"
+    )
+    start_url = st.text_input(
+        "Start URL",
+        value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+        placeholder="https://example.com",
+    )
     submitted = st.form_submit_button("Create Project")
 
 if submitted:
@@ -26,7 +27,7 @@ if submitted:
         st.error("Please provide both a project name and a start URL.")
     else:
         try:
-            project_data = Project(name=project_name, start_url=start_url)
+            project_data = Project(name=project_name, start_url=start_url)  # type: ignore[arg-type]
             response = requests.post(
                 f"{API_URL}/projects/",
                 data=project_data.model_dump_json(),
@@ -39,7 +40,9 @@ if submitted:
             else:
                 st.error(f"Error creating project: {response.text}")
         except ValidationError:
-            st.error("Invalid URL format. Please enter a full URL (e.g., 'https://example.com').")
+            st.error(
+                "Invalid URL format. Please enter a full URL (e.g., 'https://example.com')."
+            )
         except requests.exceptions.RequestException as e:
             st.error(f"Failed to connect to the backend API: {e}")
 
@@ -58,4 +61,4 @@ try:
     else:
         st.error("Could not retrieve projects from the backend.")
 except requests.exceptions.RequestException as e:
-    st.warning(f"Backend API not available: {e}") 
+    st.warning(f"Backend API not available: {e}")

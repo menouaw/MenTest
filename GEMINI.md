@@ -12,7 +12,7 @@
     - `tools.py` - Tool functions used by the agent 
     - `prompts.py` - System prompts
 - **Use clear, consistent imports** (prefer relative imports within packages).
-- **Use python_dotenv and load_env()** for environment variables.
+- **Use pydantic-settings** for environment variables, which automatically loads from `.env` files.
 
 ### 🧪 Testing & Reliability
 - **Always create Pytest unit tests for new features** (functions, classes, routes, etc.).

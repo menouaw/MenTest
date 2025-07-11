@@ -11,4 +11,4 @@ async def root():
     """
     Root endpoint for the API.
     """
-    return {"message": "Welcome to the Mentest API"} 
+    return {"message": "Welcome to the Mentest API"}

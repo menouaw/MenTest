@@ -1,6 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from typing import Dict, List, Optional
-import uuid
+from typing import Dict, List
 
 from mentest.core.models import Project
 
@@ -26,11 +25,13 @@ async def create_project(project: Project) -> Project:
     Raises:
         HTTPException: If a project with the same ID already exists.
     """
+    assert project.id is not None
     if project.id in projects_db:
         raise HTTPException(
             status_code=400, detail=f"Project with id '{project.id}' already exists."
         )
-    projects_db[project.id] = project
+
+    projects_db[str(project.id)] = project
     return project
 
 
@@ -50,4 +51,4 @@ async def get_project(project_id: str) -> Project:
     project = projects_db.get(project_id)
     if not project:
         raise HTTPException(status_code=404, detail="Project not found")
-    return project 
+    return project

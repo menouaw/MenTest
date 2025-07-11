@@ -22,4 +22,4 @@ st.markdown(
     4.  **Test Execution**: Run tests and generate automation scripts.
     5.  **Results Dashboard**: Visualize test outcomes in an Allure report.
 """
-) 
+)

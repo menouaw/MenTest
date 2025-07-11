@@ -1,40 +1,37 @@
 """Tests for core data models."""
+
 import pytest
-from uuid import uuid4
+from uuid import uuid4, UUID
 from pydantic import ValidationError
 from mentest.core.models import Project
+
 
 def test_project_creation_successful():
     """
     Tests that a Project instance can be created successfully with valid data.
     """
     project_id = uuid4()
-    project = Project(
-        id=project_id,
-        name="Test Project",
-        url="http://example.com"
-    )
+    project = Project(id=project_id, name="Test Project", start_url="http://example.com")
     assert project.id == project_id
     assert project.name == "Test Project"
-    assert str(project.url) == "http://example.com/"
+    assert str(project.start_url) == "http://example.com/"
+
 
 def test_project_creation_fails_with_missing_fields():
     """
     Tests that creating a Project instance fails when required fields are missing.
     """
     with pytest.raises(ValidationError):
-        Project(name="Incomplete Project")  # Missing id and url
+        Project(name="Incomplete Project")  # Missing start_url
+
 
 def test_project_creation_fails_with_invalid_url():
     """
     Tests that creating a Project instance fails with an invalid URL.
     """
     with pytest.raises(ValidationError):
-        Project(
-            id=uuid4(),
-            name="Invalid URL Project",
-            url="not-a-valid-url"
-        )
+        Project(id=uuid4(), name="Invalid URL Project", start_url="not-a-valid-url")
+
 
 def test_project_creation_fails_with_invalid_id():
     """
@@ -44,5 +41,5 @@ def test_project_creation_fails_with_invalid_id():
         Project(
             id="not-a-uuid",
             name="Invalid ID Project",
-            url="http://example.com"
+            start_url="http://example.com",
         )
