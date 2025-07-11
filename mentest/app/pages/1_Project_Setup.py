@@ -1,10 +1,11 @@
 import streamlit as st
 import requests
 import json
+import os
 
 from mentest.core.models import Project
 
-API_URL = "http://localhost:8000/api"
+API_URL = os.getenv("MENTEST_API_URL", "http://localhost:8000/api")
 
 st.title("📝 Project Setup")
 
