@@ -3,6 +3,15 @@ from uuid import UUID
 from pydantic import BaseModel, Field, HttpUrl
 from typing import Optional
 import uuid
+from enum import Enum
+
+
+class TestStatus(str, Enum):
+    """Enumeration for test execution statuses."""
+    PASSED = "passed"
+    FAILED = "failed"
+    PENDING = "pending"
+    RUNNING = "running"
 
 
 class Project(BaseModel):
@@ -27,5 +36,5 @@ class ExecutionResult(BaseModel):
 
     id: Optional[str] = Field(default_factory=lambda: str(uuid.uuid4()))
     scenario_id: str
-    status: str  # e.g., "passed", "failed"
+    status: TestStatus
     allure_report_path: Optional[str] = None
