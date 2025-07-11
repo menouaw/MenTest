@@ -3,6 +3,7 @@ import requests
 import json
 import os
 
+from pydantic import ValidationError
 from mentest.core.models import Project
 
 API_URL = os.getenv("MENTEST_API_URL", "http://localhost:8000/api")
@@ -24,8 +25,8 @@ if submitted:
     if not project_name or not start_url:
         st.error("Please provide both a project name and a start URL.")
     else:
-        project_data = Project(name=project_name, start_url=start_url)
         try:
+            project_data = Project(name=project_name, start_url=start_url)
             response = requests.post(
                 f"{API_URL}/projects/",
                 data=project_data.model_dump_json(),
@@ -37,6 +38,8 @@ if submitted:
                 st.json(response.json())
             else:
                 st.error(f"Error creating project: {response.text}")
+        except ValidationError:
+            st.error("Invalid URL format. Please enter a full URL (e.g., 'https://example.com').")
         except requests.exceptions.RequestException as e:
             st.error(f"Failed to connect to the backend API: {e}")
 
