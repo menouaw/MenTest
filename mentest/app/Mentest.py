@@ -1,7 +1,12 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 import streamlit as st
 import asyncio
 from dotenv import load_dotenv
-from mentest.main import run_browser_use_example  # Import the new function
+from mentest.main import run_browser_use_example
 
 load_dotenv()
 
