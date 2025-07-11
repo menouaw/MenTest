@@ -42,4 +42,4 @@ story and its acceptance criteria.
 
     Present the generated test cases in a markdown table format as specified in the expected output. The level of detail in the steps and expected results is crucial for enabling unambiguous manual execution and supporting subsequent automation efforts.
 
-    **IMPORTANT:** Your final output MUST be ONLY the markdown table content. Do not include any other text, explanations, or tool calls before or after the markdown table. 
+    **IMPORTANT:** Your final output MUST be ONLY the markdown table content. Do not include any other text, explanations, or tool calls before or after the markdown table.

@@ -1,25 +1,21 @@
 import streamlit as st
+import asyncio
+from dotenv import load_dotenv
+from mentest.main import run_browser_use_example  # Import the new function
 
-st.set_page_config(
-    page_title="Mentest Home",
-    page_icon="✅",
-    layout="wide",
-)
+load_dotenv()
 
-st.title("Welcome to Mentest! ✅")
+st.set_page_config(layout="wide")
+st.title("MenTest: Browser Use Example Executor")
 
-st.markdown(
-    """
-    Mentest is an AI-powered QA platform designed to automate the full testing
-    lifecycle for your web applications.
+# Streamlit UI
 
-    **👈 Select a page from the sidebar** to get started.
-
-    ### Workflow
-    1.  **Project Setup**: Configure your target application URL.
-    2.  **Site Exploration**: Automatically discover pages and components.
-    3.  **Test Generation**: Create test cases and Gherkin scenarios.
-    4.  **Test Execution**: Run tests and generate automation scripts.
-    5.  **Results Dashboard**: Visualize test outcomes in an Allure report.
-"""
-)
+if st.button("Run Browser Use Example", key="run_example_button"):
+    with st.spinner("Running Browser Use example... This may take a moment."):
+        result = asyncio.run(run_browser_use_example())
+        if result:
+            st.success("Execution Complete!")
+            st.write("Result:")
+            st.code(result, language="text")
+        else:
+            st.error("An error occurred or no result was returned.")

@@ -60,4 +60,4 @@ Interpret each step (Given, When, Then, And, But) as instructions for interactin
 {scenario}
 ```
 
-Execute this scenario step-by-step, following the strategy above. Prioritize successful execution and clear reporting. Do not ask clarifying questions; infer actions based on the detailed Gherkin steps and attempt the most probable browser action. 
+Execute this scenario step-by-step, following the strategy above. Prioritize successful execution and clear reporting. Do not ask clarifying questions; infer actions based on the detailed Gherkin steps and attempt the most probable browser action.

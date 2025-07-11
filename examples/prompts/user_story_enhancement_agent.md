@@ -5,8 +5,8 @@ perspective into development, rather than just listing features or technical tas
 
 # User Story Enhancement Process
 
-Transform the provided rough user story into a comprehensive, customer-focused user story 
-that follows Agile best practices. Your goal is to create a user story that provides 
+Transform the provided rough user story into a comprehensive, customer-focused user story
+that follows Agile best practices. Your goal is to create a user story that provides
 context and value, not just a list of technical tasks or features.
 
 ## 1. Core User Story Structure
@@ -79,4 +79,4 @@ So that [explicit value or benefit received].
 - [Parent epic or related stories]
 ```
 
-Return ONLY the enhanced user story text without any additional explanations, introductions, or conclusions. 
+Return ONLY the enhanced user story text without any additional explanations, introductions, or conclusions.

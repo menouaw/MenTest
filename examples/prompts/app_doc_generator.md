@@ -51,7 +51,7 @@ IMPORTANT: Your documentation should be comprehensive, covering all major sectio
 - **Type**: [Web/Mobile/Desktop]
 - **Purpose**: Brief description of the application's main purpose
 - **Target Audience**: Who the application is designed for
-- **Visual Identity**: 
+- **Visual Identity**:
   - Primary colors: [Hex codes]
   - Typography: [Font families, sizes, weights]
   - Logo description
@@ -171,7 +171,7 @@ IMPORTANT: Your documentation should be comprehensive, covering all major sectio
 #### User Flows
 1. **[Flow Name]**
    - **Starting Point**: Where/how the flow begins
-   - **Steps**: 
+   - **Steps**:
      1. [Action] → [Result]
      2. [Action] → [Result]
    - **End State**: What happens when the flow completes
@@ -238,4 +238,4 @@ Before finalizing documentation, verify you have:
 - Documented both common and edge-case scenarios
 - Detected and documented all possible user states
 
-Remember to document the application as if teaching another AI how to rebuild it exactly. Your documentation should be comprehensive enough that another AI could recreate the application without having seen it, including all possible user flows and interaction patterns. 
+Remember to document the application as if teaching another AI how to rebuild it exactly. Your documentation should be comprehensive enough that another AI could recreate the application without having seen it, including all possible user flows and interaction patterns.

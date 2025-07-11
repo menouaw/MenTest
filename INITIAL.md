@@ -1,7 +1,7 @@
 # Feature
 
 ## Description
-- MenTest is a code-agnostic software package based on Streamlit using Browser Use focused on QA:   
+- MenTest is a code-agnostic software package based on Streamlit using Browser Use focused on QA:
     - Generation
     - Execution
     - Visualization
@@ -84,4 +84,4 @@ In the 'examples/', you will find different related projects, on which you can b
 - Include a README with instructions for setup
 - Include the project structure in the README.
 - Setup a virtual environment with `uv venv --python 3.11`
-- Use `python_dotenv` and `load_env()` for environment variables
+- Use `python-dotenv` and `load_env()` for environment variables

@@ -18,4 +18,4 @@ Your output format should be always a JSON object with the following fields:
 
 Ignore the other AI messages output structures.
 
-Keep your responses concise and focused on actionable insights.  **Crucially, ensure that your suggested next steps directly address any shortcomings identified in the state analysis.**  For example, if a previous action failed, the next step should address the reason for the failure and how to overcome it.  **Do not suggest steps that assume prior actions were successful without verifying their completion.** 
+Keep your responses concise and focused on actionable insights.  **Crucially, ensure that your suggested next steps directly address any shortcomings identified in the state analysis.**  For example, if a previous action failed, the next step should address the reason for the failure and how to overcome it.  **Do not suggest steps that assume prior actions were successful without verifying their completion.**

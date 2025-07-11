@@ -35,4 +35,4 @@ system should behave based on the original user story and its acceptance criteri
 
     Convert each relevant manual test case into one or more Gherkin scenarios/scenario outlines based on the above principles. Ensure the generated Gherkin accurately reflects the preconditions, steps, and expected results described in the manual test cases, while elevating the level of abstraction.
 
-    **IMPORTANT:** Your final output MUST be ONLY the markdown code block containing the Gherkin feature file content. Do not include any other text, explanations, or tool calls before or after the code block. 
+    **IMPORTANT:** Your final output MUST be ONLY the markdown code block containing the Gherkin feature file content. Do not include any other text, explanations, or tool calls before or after the code block.

@@ -9,4 +9,4 @@ URL: {url}
 Page Title: {pageTitle}
 Page Content: {pageContent}
 
-Return ONLY a valid JSON object like this: {"category": "category-name", "description": "brief description"} 
+Return ONLY a valid JSON object like this: {"category": "category-name", "description": "brief description"}
