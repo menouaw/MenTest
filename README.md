@@ -43,7 +43,15 @@ Follow these instructions to set up your local development environment.
     uv pip install -r requirements.txt
     ```
 
-4.  **Set up environment variables:**
+4.  **Install the project in editable mode:**
+
+    This makes the `mentest` package visible to Python, which is necessary for the application to run correctly.
+
+    ```bash
+    uv pip install -e .
+    ```
+
+5.  **Set up environment variables:**
 
     Copy the example environment file and fill in your details, such as your OpenAI API key.
 
@@ -52,3 +60,25 @@ Follow these instructions to set up your local development environment.
     ```
 
     Now, open the `.env` file and add your credentials.
+
+## Running the Application
+
+To run the platform, you need to start both the backend API and the frontend UI in separate terminals.
+
+### 1. Start the Backend (FastAPI)
+
+In your first terminal, make sure your virtual environment is activated, then run:
+
+```bash
+uvicorn mentest.api.main:app --reload --port 8000
+```
+
+### 2. Start the Frontend (Streamlit)
+
+In a second terminal, activate the virtual environment and run:
+
+```bash
+streamlit run mentest/app/Mentest.py
+```
+
+The application will be available at `http://localhost:8501`.
