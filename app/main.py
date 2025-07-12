@@ -51,6 +51,6 @@ if st.button(
         if result:
             st.success("Exécution terminée !")
             st.write("Résultat :")
-            st.code(result, language="text")
+            st.code(result.final_result(), language="text", wrap_lines=True)
         else:
             st.error("Une erreur s'est produite ou aucun résultat n'a été retourné.")
