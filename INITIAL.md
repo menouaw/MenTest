@@ -6,7 +6,7 @@
     - Execution
     - Visualization
     - Self-healing
-- Web-focused (desktop app? mobile?)
+- Web-focused
 - Human intervention required
 - Easy to learn, hard to master
 

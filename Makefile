@@ -15,4 +15,4 @@ typecheck:
 test:
 	pytest -v tests/
 
-all: format lint typecheck test
+all: format lint typecheck

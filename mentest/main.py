@@ -2,11 +2,10 @@ from browser_use.llm import ChatOpenAI
 from browser_use import Agent
 from dotenv import load_dotenv
 import os
-
-load_dotenv()
-
 import asyncio
 import platform
+
+load_dotenv()
 
 # Set the appropriate event loop policy for Windows
 if platform.system() == "Windows":
@@ -18,7 +17,7 @@ llm = ChatOpenAI(model="gpt-4.1", api_key=openai_api_key)
 
 async def run_browser_use_example():
     agent = Agent(
-        task="Compare the price of gpt-4o and DeepSeek-V3",
+        task="search for the meteo in paris",
         llm=llm,
     )
     result = await agent.run()
