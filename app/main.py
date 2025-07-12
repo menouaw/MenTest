@@ -39,13 +39,18 @@ if "playwright_installed" not in st.session_state:
 if st.button(
     "Lancer la démo",
     key="run_example_button",
-    help="Exécute un exemple d'utilisation du navigateur avec Playwright",
+    help="Se connecte sur OrangeHRM, ajoute une personne en tant que contact d'urgence, puis se déconnecte.",
 ):
     with st.spinner("Exécution de l'exemple d'utilisation du navigateur..."):
-        result = asyncio.run(run_browser_use_example())
+        result = asyncio.run(
+            run_browser_use_example(
+                task="Connecte-toi sur https://opensource-demo.orangehrmlive.com, ajoute ma femme: Lucy en tant que contact d'urgence, puis déconnecte.",
+                use_vision=True,
+            )
+        )
         if result:
             st.success("Exécution terminée !")
-            st.write("ésultat :")
+            st.write("Résultat :")
             st.code(result, language="text")
         else:
             st.error("Une erreur s'est produite ou aucun résultat n'a été retourné.")

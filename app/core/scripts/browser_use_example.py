@@ -1,4 +1,4 @@
-from browser_use.llm import ChatOpenAI
+from browser_use.llm import ChatGoogle
 from browser_use import Agent
 from dotenv import load_dotenv
 import os
@@ -12,14 +12,18 @@ if platform.system() == "Windows":
     if policy is not None:
         asyncio.set_event_loop_policy(policy())
 
-openai_api_key = os.getenv("OPENAI_API_KEY")
-llm = ChatOpenAI(model="gpt-4.1", api_key=openai_api_key)
+google_api_key = os.getenv("GOOGLE_API_KEY")
+# openai_api_key = os.getenv("OPENAI_API_KEY")
+llm = ChatGoogle(model="gemini-2.5-pro")
 
 
-async def run_browser_use_example():
+async def run_browser_use_example(task: str, llm=llm, use_vision: bool = False):
     agent = Agent(
-        task="search for the meteo in paris",
+        task=task,
         llm=llm,
+        use_vision=use_vision,
+        save_conversation_path="logs/conversation",
     )
+    
     result = await agent.run()
     return result
