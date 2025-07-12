@@ -4,13 +4,13 @@ install:
 	uv pip install -r requirements.txt
 
 lint:
-	ruff check mentest/ --fix
+	ruff check app/ --fix
 
 format:
-	black mentest/
+	black app/
 
 typecheck:
-	mypy mentest/
+	mypy app/
 
 test:
 	pytest -v tests/

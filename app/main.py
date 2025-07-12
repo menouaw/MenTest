@@ -8,11 +8,7 @@ from core.scripts.browser_use_example import run_browser_use_example
 
 load_dotenv()
 
-st.set_page_config(
-    page_title="MenTest",
-    page_icon="👋",
-    layout="wide"
-)
+st.set_page_config(page_title="MenTest", page_icon="👋", layout="wide")
 
 st.title("MenTest: automatisation de tests")
 
@@ -40,7 +36,11 @@ if "playwright_installed" not in st.session_state:
 
 # Streamlit UI
 
-if st.button("Lancer la démo", key="run_example_button", help="Exécute un exemple d'utilisation du navigateur avec Playwright"):
+if st.button(
+    "Lancer la démo",
+    key="run_example_button",
+    help="Exécute un exemple d'utilisation du navigateur avec Playwright",
+):
     with st.spinner("Exécution de l'exemple d'utilisation du navigateur..."):
         result = asyncio.run(run_browser_use_example())
         if result:
