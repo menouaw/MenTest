@@ -5,6 +5,7 @@ import asyncio
 from dotenv import load_dotenv
 
 from core.scripts.browser_use_example import run_browser_use_example
+from core.scripts.debug_gif import main as run_debug_gif
 
 load_dotenv()
 
@@ -43,9 +44,9 @@ if st.button(
 ):
     with st.spinner("Exécution de l'exemple d'utilisation du navigateur..."):
         result = asyncio.run(
-            run_browser_use_example(
-                task="Connecte-toi sur https://opensource-demo.orangehrmlive.com, ajoute ma femme: Lucy en tant que contact d'urgence, puis déconnecte.",
-                use_vision=True,
+            run_debug_gif(
+                # task="Connecte-toi sur https://opensource-demo.orangehrmlive.com, ajoute ma femme: Lucy en tant que contact d'urgence, puis déconnecte.",
+                # use_vision=True,
             )
         )
         if result:

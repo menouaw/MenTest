@@ -1,5 +1,5 @@
 from browser_use.llm import ChatGoogle, ChatOpenAI
-from browser_use import Agent
+from browser_use import Agent, BrowserSession
 from dotenv import load_dotenv
 import os
 import asyncio
@@ -19,6 +19,18 @@ gemini25pro = ChatGoogle(model="gemini-2.5-pro")
 gemini20flashlite = ChatGoogle(model="gemini-2.0-flash-lite")
 gpt41 = ChatOpenAI(model="gpt-4.1")
 
+browser_session = BrowserSession(
+    highlight_elements=True,
+    deterministic_rendering=False,
+    include_dynamic_attributes=True,
+    save_recording_path="logs/recording",
+)
+
+gif_path = "gifs/conversation.gif"
+gif_dir = os.path.dirname(gif_path)
+if gif_dir and not os.path.exists(gif_dir):
+    os.makedirs(gif_dir)
+
 
 async def run_browser_use_example(
     task: str, llm=gemini20flashlite, use_vision: bool = False
@@ -27,10 +39,11 @@ async def run_browser_use_example(
         task=task,
         llm=llm,
         use_vision=use_vision,
+        browser_session=browser_session,
         max_failures=3,
         retry_delay=10,
         message_context="",
-        generate_gif=True,
+        generate_gif=gif_path,
         override_system_message=None,
         extend_system_message=None,
         max_actions_per_step=10,
