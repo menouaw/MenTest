@@ -20,7 +20,9 @@ gemini20flashlite = ChatGoogle(model="gemini-2.0-flash-lite")
 gpt41 = ChatOpenAI(model="gpt-4.1")
 
 
-async def run_browser_use_example(task: str, llm=gemini20flashlite, use_vision: bool = False):
+async def run_browser_use_example(
+    task: str, llm=gemini20flashlite, use_vision: bool = False
+):
     agent = Agent(
         task=task,
         llm=llm,
@@ -32,16 +34,16 @@ async def run_browser_use_example(task: str, llm=gemini20flashlite, use_vision: 
         override_system_message=None,
         extend_system_message=None,
         max_actions_per_step=10,
-        use_thinking=False, # dev only
+        use_thinking=False,  # dev only
         max_history_items=40,
         images_per_step=1,
-        page_extraction_llm= gemini20flashlite,
+        page_extraction_llm=gemini20flashlite,
         planner_llm=gemini20flashlite,
         is_planner_reasoning=False,
         expend_planner_system_message=None,
         calculate_cost=True,
         save_conversation_path="logs/conversation",
     )
-    
+
     result = await agent.run()
-    return result
+    return result.final_result()
