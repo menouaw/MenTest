@@ -27,7 +27,7 @@ if "playwright_installed" not in st.session_state:
     with st.spinner("Installation des navigateurs Playwright... "):
         try:
             result = subprocess.run(
-                [sys.executable, "-m", "playwright", "install", "--with-deps", "chromium"],
+                [sys.executable, "-m", "playwright", "install"],
                 capture_output=True,
                 text=True,
                 check=True,
