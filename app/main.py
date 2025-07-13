@@ -55,3 +55,4 @@ if st.button(
             st.code(result, language="text", wrap_lines=True)
         else:
             st.error("Une erreur s'est produite ou aucun résultat n'a été retourné.")
+
